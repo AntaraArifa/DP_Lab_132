@@ -1,13 +1,13 @@
 public class Trip {
-    private int id;
-    private String pickupLocation;
-    private String dropOffLocation;
-    private RideType rideType;
-    private String status;
-    private double fare;
-    private double distance;
-    private Rider rider;
-    private Driver driver;
+    public int id;
+    public String pickupLocation;
+    public String dropOffLocation;
+    public RideType rideType;
+    public String status;
+    public double fare;
+    public double distance;
+    public Rider rider;
+    public Driver driver;
 
     public Trip(int id, RideType rideType, String status, double distance) {
         this.id = id;
@@ -16,15 +16,39 @@ public class Trip {
         this.rideType = rideType;
         this.status = status;
         this.distance = distance;
+        this.fare = rideType.calculateFare(distance);
     }
 
-    public void calculateFare(){
-
+    public double calculateFare() {
+        return rideType.calculateFare(distance);
     }
-    public void assignDriver(){
 
+    public void assignDriver(Driver driver, SendNotification notificationMethod) {
+        this.driver = driver;
+        this.status = "Driver Assigned";
+        NotificationService.sendNotification(notificationMethod, "Driver assigned to trip: " + this.id);
     }
-    public void completeTrip(){
 
+    public void startTrip(SendNotification notificationMethod) {
+        this.status = "In Progress";
+        NotificationService.sendNotification(notificationMethod, "Trip started: " + this.id);
+    }
+
+    public void completeTrip(SendNotification notificationMethod) {
+        this.status = "Completed";
+        NotificationService.sendNotification(notificationMethod, "Trip completed: " + this.id);
+        rider.makePayment(new CreditCard(), this.fare);
+    }
+
+    public void setPickupLocation(String pickupLocation) {
+        this.pickupLocation = pickupLocation;
+    }
+
+    public void setDropOffLocation(String dropOffLocation) {
+        this.dropOffLocation = dropOffLocation;
+    }
+
+    public void setRider(Rider rider) {
+        this.rider = rider;
     }
 }

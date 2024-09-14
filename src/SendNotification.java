@@ -1,3 +1,3 @@
 public interface SendNotification {
-    void sendNotification();
+    void sendNotification(String message);
 }

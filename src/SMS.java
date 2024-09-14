@@ -1,5 +1,6 @@
-class SMS implements SendNotification {
-    public void sendNotification() {
-
+public class SMS implements SendNotification {
+    @Override
+    public void sendNotification(String message) {
+        System.out.println("SMS Notification: " + message);
     }
 }

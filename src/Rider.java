@@ -12,14 +12,19 @@ public class Rider {
         this.rating = 0;
     }
 
-    public void requestRide(){
-
-    }
-    public void rateDriver(){
-
-    }
-    public void makePayment(){
-
+    public void requestRide(Trip trip, RideService rideService) {
+        rideService.requestRide(this, trip);
     }
 
+    public void rateDriver(Driver driver, double rating) {
+        driver.updateRating(rating);
+    }
+
+    public void makePayment(PaymentMethod paymentMethod, double amount) {
+        paymentMethod.processPayment(amount);
+    }
+
+    public void updateRating(double newRating) {
+        this.rating = (this.rating + newRating) / 2;
+    }
 }

@@ -12,23 +12,35 @@ public class Driver {
         this.vehicleType = vehicleType;
         this.location = null;
         this.rating = 0;
+        this.availability = true;
     }
 
-    public void acceptRide(){
-
-    }
-    public void rateRider(){
-
-    }
-    public void updateLocation(){
-
-    }
-    public void startTrip(){
-
+    public void acceptRide(Trip trip, SendNotification notificationMethod) {
+        trip.assignDriver(this, notificationMethod);
+        this.availability = false;
+        NotificationService.sendNotification(notificationMethod, "Driver assigned: " + this.name);
     }
 
-    public void endTrip(){
-
+    public void rateRider(Rider rider, double rating) {
+        rider.updateRating(rating);
     }
 
+    public void updateLocation(String location) {
+        this.location = location;
+    }
+
+    public void startTrip(Trip trip, SendNotification notificationMethod) {
+        trip.startTrip(notificationMethod);
+        NotificationService.sendNotification(notificationMethod, "Trip started by: " + this.name);
+    }
+
+    public void completeTrip(Trip trip, SendNotification notificationMethod) {
+        trip.completeTrip(notificationMethod);
+        this.availability = true;
+        NotificationService.sendNotification(notificationMethod, "Trip completed by: " + this.name);
+    }
+
+    public void updateRating(double newRating) {
+        this.rating = (this.rating + newRating) / 2;
+    }
 }

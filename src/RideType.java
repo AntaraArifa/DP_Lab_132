@@ -1,5 +1,4 @@
 public interface RideType {
-    void calculateFare(double fare);
+    double calculateFare(double distance);
+    String getTypeName();
 }
-
-

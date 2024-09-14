@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ac98704-1254-4bca-8d1a-bb4ae346ca97" name="Changes" comment="" />
+    <list default="true" id="9ac98704-1254-4bca-8d1a-bb4ae346ca97" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BikeRide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BikeRide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Carpool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Carpool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CreditCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CreditCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DigitalWallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DigitalWallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Email.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LuxuryRide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LuxuryRide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PayPal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PayPal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RideType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RideType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Rider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SMS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SMS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SendNotification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SendNotification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Trip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Trip.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,9 +36,12 @@
       </list>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2m0HPE2dhtPvLgKjWKUoAf7WuZ0" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -28,7 +49,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -55,6 +79,7 @@
       <option name="presentableId" value="Default" />
       <updated>1726206548790</updated>
       <workItem from="1726206549893" duration="4827000" />
+      <workItem from="1726315727648" duration="11706000" />
     </task>
     <servers />
   </component>
