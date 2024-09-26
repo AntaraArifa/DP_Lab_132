@@ -12,11 +12,11 @@ public class Admin {
     public void manageDriver(Driver driver, boolean activate) {
         driver.availability = activate;
         String status = activate ? "activated" : "deactivated";
-        System.out.println("Driver " + driver.name + " has been " + status + ".");
+        System.out.println("Domain.Driver " + driver.name + " has been " + status + ".");
     }
 
     public void manageRider(Rider rider, boolean activate) {
-        System.out.println("Rider " + rider.name + " has been " + (activate ? "activated" : "deactivated") + ".");
+        System.out.println("Domain.Rider " + rider.name + " has been " + (activate ? "activated" : "deactivated") + ".");
     }
 
     public void viewTripHistory(Trip trip) {
@@ -27,8 +27,8 @@ public class Admin {
         System.out.println("Status: " + trip.status);
         System.out.println("Fare: " + trip.fare);
         System.out.println("Distance: " + trip.distance);
-        System.out.println("Driver: " + (trip.driver != null ? trip.driver.name : "Not Assigned"));
-        System.out.println("Rider: " + (trip.rider != null ? trip.rider.name : "Not Assigned"));
+        System.out.println("Domain.Driver: " + (trip.driver != null ? trip.driver.name : "Not Assigned"));
+        System.out.println("Domain.Rider: " + (trip.rider != null ? trip.rider.name : "Not Assigned"));
     }
 
     public void handleDispute(Trip trip, String issue) {

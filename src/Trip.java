@@ -11,8 +11,6 @@ public class Trip {
 
     public Trip(int id, RideType rideType, String status, double distance) {
         this.id = id;
-        this.pickupLocation = null;
-        this.dropOffLocation = null;
         this.rideType = rideType;
         this.status = status;
         this.distance = distance;
@@ -37,7 +35,6 @@ public class Trip {
     public void completeTrip(SendNotification notificationMethod) {
         this.status = "Completed";
         NotificationService.sendNotification(notificationMethod, "Trip completed: " + this.id);
-        rider.makePayment(new CreditCard(), this.fare);
     }
 
     public void setPickupLocation(String pickupLocation) {

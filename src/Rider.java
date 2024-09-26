@@ -1,30 +1,27 @@
-public class Rider {
-    public int id;
-    public String name;
-    public String location;
-    public double rating;
-    public String preferredPaymentMethod;
+public class Rider extends User {
+    public PaymentMethod preferredPaymentMethod;
 
-    public Rider(int id, String name) {
+    public Rider(int id, String name, PaymentMethod paymentMethod) {
         this.id = id;
         this.name = name;
-        this.location = null;
-        this.rating = 0;
+        this.preferredPaymentMethod = paymentMethod;
     }
 
-    public void requestRide(Trip trip, RideService rideService) {
+    public Trip requestRide(RideType rideType, String pickupLocation, String dropOffLocation, double distance, SendNotification notificationMethod) {
+        Trip trip = new Trip(1, rideType, "Pending", distance);
+        trip.setPickupLocation(pickupLocation);
+        trip.setDropOffLocation(dropOffLocation);
+        trip.setRider(this);
+        RideService rideService = new RideService();
         rideService.requestRide(this, trip);
+        return trip;
     }
 
     public void rateDriver(Driver driver, double rating) {
         driver.updateRating(rating);
     }
 
-    public void makePayment(PaymentMethod paymentMethod, double amount) {
-        paymentMethod.processPayment(amount);
-    }
-
-    public void updateRating(double newRating) {
-        this.rating = (this.rating + newRating) / 2;
+    public void makePayment(double amount) {
+        this.preferredPaymentMethod.processPayment(amount);
     }
 }
