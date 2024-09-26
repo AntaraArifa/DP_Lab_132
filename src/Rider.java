@@ -1,20 +1,14 @@
 public class Rider extends User {
-    public PaymentMethod preferredPaymentMethod;
+    private PaymentMethod paymentMethod;
 
     public Rider(int id, String name, PaymentMethod paymentMethod) {
         this.id = id;
         this.name = name;
-        this.preferredPaymentMethod = paymentMethod;
+        this.paymentMethod = paymentMethod;
     }
 
-    public Trip requestRide(RideType rideType, String pickupLocation, String dropOffLocation, double distance, SendNotification notificationMethod) {
-        Trip trip = new Trip(1, rideType, "Pending", distance);
-        trip.setPickupLocation(pickupLocation);
-        trip.setDropOffLocation(dropOffLocation);
-        trip.setRider(this);
-        RideService rideService = new RideService();
+    public void requestRide(Trip trip, RideService rideService) {
         rideService.requestRide(this, trip);
-        return trip;
     }
 
     public void rateDriver(Driver driver, double rating) {
@@ -22,6 +16,11 @@ public class Rider extends User {
     }
 
     public void makePayment(double amount) {
-        this.preferredPaymentMethod.processPayment(amount);
+        paymentMethod.processPayment(amount);
+    }
+
+    public void changePaymentMethod(PaymentMethod newPaymentMethod) {
+        this.paymentMethod = newPaymentMethod;
+        System.out.println("Payment method changed successfully.");
     }
 }

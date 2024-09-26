@@ -35,6 +35,7 @@ public class Trip {
     public void completeTrip(SendNotification notificationMethod) {
         this.status = "Completed";
         NotificationService.sendNotification(notificationMethod, "Trip completed: " + this.id);
+        rider.makePayment(this.fare);
     }
 
     public void setPickupLocation(String pickupLocation) {
@@ -47,5 +48,10 @@ public class Trip {
 
     public void setRider(Rider rider) {
         this.rider = rider;
+    }
+
+    public void setRideType(RideType rideType) {
+        this.rideType = rideType;
+        this.fare = rideType.calculateFare(this.distance);
     }
 }
