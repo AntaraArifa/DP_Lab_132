@@ -1,4 +1,10 @@
-public class Driver extends User {
+package Domain;
+
+import Event.Trip;
+import NotificationBehaviour.NotificationService;
+import NotificationBehaviour.SendNotification;
+
+public class Driver extends domain.User {
     public String vehicleType;
     public boolean availability;
 
@@ -24,5 +30,9 @@ public class Driver extends User {
         trip.completeTrip(notificationMethod);
         this.availability = true;
         NotificationService.sendNotification(notificationMethod, "Trip completed by: " + this.name);
+    }
+
+    public String getName() {
+        return this.name;
     }
 }

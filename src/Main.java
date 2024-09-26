@@ -1,3 +1,13 @@
+import Domain.Rider;
+import Domain.Driver;
+import Event.Trip;
+import NotificationBehaviour.NotificationService;
+import PaymentBehaviour.CreditCard;
+import PaymentBehaviour.DigitalWallet;
+import PaymentBehaviour.PayPal;
+import PaymentBehaviour.PaymentMethod;
+import RidetypeBehaviour.*;
+
 import java.util.Scanner;
 
 public class Main {
@@ -9,7 +19,7 @@ public class Main {
     private static void createRider(Scanner scanner) {
         System.out.println("Enter Rider ID:");
         int riderId = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine();
 
         System.out.println("Enter Rider Name:");
         String riderName = scanner.nextLine();
@@ -26,7 +36,7 @@ public class Main {
 
         System.out.println("Enter Distance (in kilometers):");
         double distance = scanner.nextDouble();
-        scanner.nextLine();  // Consume newline
+        scanner.nextLine();
 
         RideType selectedRideType = chooseRideType(scanner, distance);
 
@@ -52,11 +62,11 @@ public class Main {
         // Rider rates the driver
         System.out.println("Enter Driver ID to rate:");
         int driverId = scanner.nextInt();
-        scanner.nextLine();  // Consume newline
+        scanner.nextLine();
 
         System.out.println("Enter Driver Rating (1 to 5):");
         int driverRating = scanner.nextInt();
-        scanner.nextLine();  // Consume newline
+        scanner.nextLine();
 
         Driver driver = new Driver(driverId, "Sample Driver", "Unknown");
         rider.rateDriver(driver, driverRating);
@@ -76,7 +86,7 @@ public class Main {
     private static PaymentMethod choosePaymentMethod(Scanner scanner) {
         System.out.println("Enter Payment Method (1 for Credit Card, 2 for PayPal, 3 for Digital Wallet):");
         int paymentChoice = scanner.nextInt();
-        scanner.nextLine();  // Consume newline
+        scanner.nextLine();
 
         switch (paymentChoice) {
             case 1:
@@ -94,7 +104,7 @@ public class Main {
     private static RideType chooseRideType(Scanner scanner, double distance) {
         System.out.println("Enter Ride Type (1 for Bike Ride, 2 for Carpool, 3 for Luxury Ride):");
         int rideTypeChoice = scanner.nextInt();
-        scanner.nextLine();  // Consume newline
+        scanner.nextLine();
 
         switch (rideTypeChoice) {
             case 1:

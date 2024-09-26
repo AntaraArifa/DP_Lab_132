@@ -1,3 +1,11 @@
+package Event;
+
+import Domain.Driver;
+import Domain.Rider;
+import NotificationBehaviour.NotificationService;
+import NotificationBehaviour.SendNotification;
+import RidetypeBehaviour.RideType;
+
 public class Trip {
     public int id;
     public String pickupLocation;

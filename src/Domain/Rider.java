@@ -1,4 +1,10 @@
-public class Rider extends User {
+package Domain;
+
+import Event.Trip;
+import PaymentBehaviour.PaymentMethod;
+import RidetypeBehaviour.RideService;
+
+public class Rider extends domain.User {
     private PaymentMethod paymentMethod;
 
     public Rider(int id, String name, PaymentMethod paymentMethod) {
@@ -11,10 +17,6 @@ public class Rider extends User {
         rideService.requestRide(this, trip);
     }
 
-    public void rateDriver(Driver driver, double rating) {
-        driver.updateRating(rating);
-    }
-
     public void makePayment(double amount) {
         paymentMethod.processPayment(amount);
     }
@@ -22,5 +24,9 @@ public class Rider extends User {
     public void changePaymentMethod(PaymentMethod newPaymentMethod) {
         this.paymentMethod = newPaymentMethod;
         System.out.println("Payment method changed successfully.");
+    }
+
+    public void rateDriver(Driver driver, int rating) {
+        System.out.println("Rated driver " + driver.getName() + " with " + rating + " stars.");
     }
 }

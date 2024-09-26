@@ -1,3 +1,5 @@
+package RidetypeBehaviour;
+
 public class LuxuryRide implements RideType {
     public double calculateFare(double distance) {
         return distance * 15;

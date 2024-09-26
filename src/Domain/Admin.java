@@ -1,3 +1,7 @@
+package Domain;
+
+import Event.Trip;
+
 public class Admin {
     public int id;
     public String name;
@@ -12,11 +16,11 @@ public class Admin {
     public void manageDriver(Driver driver, boolean activate) {
         driver.availability = activate;
         String status = activate ? "activated" : "deactivated";
-        System.out.println("Domain.Driver " + driver.name + " has been " + status + ".");
+        System.out.println("Driver " + driver.name + " has been " + status + ".");
     }
 
     public void manageRider(Rider rider, boolean activate) {
-        System.out.println("Domain.Rider " + rider.name + " has been " + (activate ? "activated" : "deactivated") + ".");
+        System.out.println("Rider " + rider.name + " has been " + (activate ? "activated" : "deactivated") + ".");
     }
 
     public void viewTripHistory(Trip trip) {
